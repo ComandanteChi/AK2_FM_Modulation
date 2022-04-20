@@ -20,4 +20,4 @@ Denn wir in MATLAB nur mit diskrete Signale arbeiten können muss unsere Audioda
 
 STEP 2<br />
 Butterworth Filter Entwurf.
-<br /> ![Butterworth Filter](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/img/bode_freq_resp.fig?raw=true "Butterworth Filter")
+<br /> ![Butterworth Filter](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/img/butter_filter.jpg?raw=true "Butterworth Filter")
