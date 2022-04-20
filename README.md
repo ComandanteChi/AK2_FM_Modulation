@@ -4,7 +4,7 @@ Das Ziel der Übung ist ein Musikstück auf ein Sinussignal aufmodulieren und da
 ### Theorie:
 FM is eine Form der Modulation dei der, die Frequenzänderungen am Trägersignal entsprechen der Änderungen am Basisbandsignal. Die Amplitude des Signals bleibt dabei konstant. FM ist eine analoge Form der Signalübertragung.
 
-![FM-Modulation](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/img/frequencymodulation.png/)
+![FM-Modulation](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/img/frequencymodulation.png)
 <br /> Wie der Name schon sagt ist FM in Radioübertragung andewendet. 
 
 ### Rahmenbedinungen:
