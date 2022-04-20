@@ -25,7 +25,7 @@ fstop = 8e3;    % Sperrgrenze
 H = tf(B,A,Ts);      
 
 figure(1);
-bode(H);     % zeichne Bodediagramm
+bode(H)     % zeichne Bodediagramm
 grid on;
 legend('H', "location", "southwest");
 % Filtert Inputsignal mit Hilfe von Transferfunktion, die mit Zähler und

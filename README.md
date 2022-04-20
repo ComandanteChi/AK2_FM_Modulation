@@ -13,10 +13,11 @@ FM is eine Form der Modulation dei der, die Frequenzänderungen am Trägersignal
 - [FM_Skript_2.m](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/FM_Skript_2.m/) demoduliert diesen Signal bzw. gewinnt ihn wieder und speichert ihn als [mozart_orig.wav](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/mozart_orig.wav/) Datei ab.
 
 ### FM-Modulation
-STEP 1 <br />
+STEP 1<br />
 Denn wir in MATLAB nur mit diskrete Signale arbeiten können muss unsere Audiodatei zuerst abgetastet werden.
 
 <pre><code>[v_in, fs] = audioread('./AK2_FM_Modulation/mozart.wav');</code></pre>
 
-STEP 2
-
+STEP 2<br />
+Butterworth Filter Entwurf.
+<br /> ![Butterworth Filter](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/img/bode_freq_resp.fig?raw=true "Butterworth Filter")
