@@ -19,5 +19,5 @@ Denn wir in MATLAB nur mit diskrete Signale arbeiten können muss unsere Audioda
 <pre><code>[v_in, fs] = audioread('./AK2_FM_Modulation/mozart.wav');</code></pre>
 
 STEP 2<br />
-Butterworth Filter Entwurf.
+Butterworth Filter Entwurf. Der Basissignal muss von  
 <br /> ![Butterworth Filter](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/img/butter_filter.jpg?raw=true "Butterworth Filter")
