@@ -23,6 +23,7 @@ Denn wir in MATLAB nur mit diskrete Signale arbeiten können muss unsere Audioda
 
 **STEP 2**<br />
 Butterworth Filter Entwurf. Der Basissignal muss von Frequnzen, die für das menschliche Ohr unrelevent sind gefiltert werden.
+
 <br /> ![Butterworth Filter](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/img/butter_filter.jpg?raw=true "Butterworth Filter")
 <pre><code>[N,Wn] = buttord(2*fpass/fs, 2*fstop/fs,apass,astop);<br />[B,A] = butter(N,Wn);</code></pre><br />
 
@@ -83,6 +84,7 @@ Am Schluss modulieren wir das Signal, das gesendet werden muss, auf Trägersigna
 <pre><code>v_fm = sin(phi)
 audiowrite('mozart_fm.wav',v_fm,fs);</code></pre>
 Wenn wir das FM-Signal Plotten bekommen wir folgenden Graph:
+
 <br /> ![FM-Modulation](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/img/fm_and_audio.jpg?raw=true "FM-Modulation")
 <br /><br />
 ### **FM-Demodulation**
@@ -182,9 +184,7 @@ hilb_imag = cat(1,hilb_imag,zeros((M+1)/2,1));
 v_hilb = v_diff + 1i*hilb_imag;
 v_out = abs(v_hilb);</code></pre>
 
-Auf diese Arten werden die negative Erequenzbereich abgechnitten und positive Bereich dagegen verstärkt.
-
-Im Zeitbereich wird die Impulsantwort nach rechts "verschoben". So wird das Signal mit eine gewisse Verzögerung an Empfänger ankommen, aber die Verzögerung in Millisekundenbereich wird der Empfänger kaum merken. 
+Hilbert Transformation elliminiert die negative Frequenzen und verstärkt die positive Frequenzen. Im Zeitbereich wird die Impulsantwort nach rechts "verschoben". So wird das Signal mit eine gewisse Verzögerung an Empfänger ankommen, aber die Verzögerung in Millisekundenbereich wird der Empfänger kaum merken. 
 
 **STEP 4** <br />
 Letzendlich muss das Signal von Trägersignal Frequenzen gefiltert werden. Das Signal wird mit Butterworth gefiltert.
@@ -209,6 +209,8 @@ v_out = v_out./v_out_max;</code></pre>
 Das zurückgewonene Signal wird als [mozart_orig.wav](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/audio/mozart_orig.wav/) abgeschpeichert.
 
 <pre><code>audiowrite('mozart_orig.wav',v_out,fs);</code></pre>
+
+Zum Vergleich sind zwei Audiosignale graphisch dargergestellt. Erstes Signal zeigt die ursprüngliche Audiodatei, zweites zeigt das zurückgewonnene Signal. Auf diesen Abbildungen ist eine optische Ähnlichkeit sichtbar.
 
 <br /> ![Vergleich](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/img/vor_FM.jpg?raw=true "Vergleich des Signals vor Modulation und nach Demodulation")
 <br /> ![Vergleich](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/img/nach_Demod.jpg?raw=true "Vergleich des Signals vor Modulation und nach Demodulation")
