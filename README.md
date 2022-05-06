@@ -34,7 +34,7 @@ Wie wir schon wissen die Formel für die Frequenzmodulation lautet:
 </p>
 
 Daher berechnen wir die Phase
-&nbsp;<img src="https://latex.codecogs.com/png.image?\dpi{110}\varphi (t)">&nbsp;
+&nbsp;<img src="https://latex.codecogs.com/png.image?\dpi{110}\varphi(t)">&nbsp;
 . Die Phase ergibt sich aus folgenden Beziehungen:
 
 <p align="center">
@@ -60,7 +60,7 @@ Aus den letzten zwei Gleichungen lässt sich die Phase &nbsp;
 <img src="https://latex.codecogs.com/png.image?\dpi{110}\varphi&space;(t)"> &nbsp; ausrechnen.
 
 <p align="center">
-<img src="https://latex.codecogs.com/png.image?\dpi{110}\varphi&space;(t)&space;=&space;\int_{-\infty}^{t}&space;\omega(\tau&space;){\mathrm{d}&space;\tau}&space;=&space;K\int_{-\infty}^{t}&space;s(\tau&space;){\mathrm{d}&space;\tau&plus;\omega_{T}t}">
+<img src="https://latex.codecogs.com/png.image?\dpi{110}\varphi&space;(t)&space;=&space;\int_{-\infty}^{t}&space;\omega(\tau&space;){\mathrm{d}&space;\tau}&space;=&space;K\int_{-\infty}^{t}&space;s(\tau&space;){\mathrm{d}&space;\tau+\omega_{T}t}">
 </p>
 
 
@@ -71,7 +71,6 @@ aus und schneiden die
 &nbsp;
 <img src="https://latex.codecogs.com/png.image?\dpi{110}2\pi&space;"> &nbsp;
 Anteile ab.
-
 
 
 <pre><code>phi(1) = K*v_out(1)*Ts + wt*Ts;<br />phi(1) = mod(phi(1),2*pi);<br />for i=2:1:N   
