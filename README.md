@@ -24,10 +24,13 @@ Butterworth Filter Entwurf. Der Basissignal muss von Frequnzen, die für das men
 <pre><code>[N,Wn] = buttord(2*fpass/fs, 2*fstop/fs,apass,astop);<br />[B,A] = butter(N,Wn);</code></pre><br />
 **STEP 3**<br />
 Wie wir schon wissen die Formel für die Frequenzmodulation lautet:
-$$
-    u_{FM}(t)=sin(\varphi (t))
-$$
+
+<p align="center">
+<img src="https://render.githubusercontent.com/render/math?math=u_{FM}(t)=sin(\varphi (t))">
+</p>
+
 Daher berechnen wir die Phase $\varphi (t)$. Die Phase ergibt sich aus folgenden Beziehungen:
+
 $$
     \varphi (t) = \omega_{0} t + \varphi_{0}
 $$
