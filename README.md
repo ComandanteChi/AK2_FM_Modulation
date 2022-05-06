@@ -34,7 +34,7 @@ Wie wir schon wissen die Formel für die Frequenzmodulation lautet:
 </p>
 
 Daher berechnen wir die Phase
-&nbsp;<img src="https://latex.codecogs.com/png.image?\dpi{110}\varphi(t)">&nbsp;
+&nbsp;<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\varphi(t)">
 . Die Phase ergibt sich aus folgenden Beziehungen:
 
 <p align="center">
