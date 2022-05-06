@@ -1,7 +1,6 @@
 
 # FM-Modulation/Demodulation
-
-Das Ziel der Übung ist ein Musikstück auf ein Sinussignal aufmodulieren und dann demodulieren.
+Das Ziel der Übung ist ein Musikstück auf ein Sinussignal modulieren und dann dieses Signal demodulieren (zurückgewinnen).
 ### Theorie:
 FM is eine Form der Modulation dei der, die Frequenzänderungen am Trägersignal entsprechen der Änderungen am Basisbandsignal. Die Amplitude des Signals bleibt dabei konstant. FM ist eine analoge Form der Signalübertragung.
 
