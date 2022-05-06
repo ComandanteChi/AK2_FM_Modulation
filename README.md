@@ -25,11 +25,19 @@ Butterworth Filter Entwurf. Der Basissignal muss von Frequnzen, die für das men
 **STEP 3**<br />
 Wie wir schon wissen die Formel für die Frequenzmodulation lautet:
 
+
+![equation](http://www.sciweavers.org/tex2img.php?eq=1%2Bsin%28mc%5E2%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
+
+
 <p align="center">
 <img src="https://render.githubusercontent.com/render/math?math=u_{FM}(t)=sin(\varphi (t))">
 </p>
 
 Daher berechnen wir die Phase $\varphi (t)$. Die Phase ergibt sich aus folgenden Beziehungen:
+
+<p align="center">
+<img src="https://render.githubusercontent.com/render/math?math=\varphi (t) = \omega_{0}t + \varphi_{0}">
+</p>
 
 $$
     \varphi (t) = \omega_{0} t + \varphi_{0}
@@ -38,6 +46,16 @@ $$
 $$
   \omega(t)=\frac{\mathrm{d} \varphi (t)}{\mathrm{d} t} = Ks(t)+\omega_{T}
 $$
+
+
+<!-- $$
+  \omega(t)=\frac{\mathrm{d} \varphi (t)}{\mathrm{d} t} = Ks(t)+\omega_{T}
+$$ --> 
+
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=%20%20%5Comega(t)%3D%5Cfrac%7B%5Cmathrm%7Bd%7D%20%5Cvarphi%20(t)%7D%7B%5Cmathrm%7Bd%7D%20t%7D%20%3D%20Ks(t)%2B%5Comega_%7BT%7D"></div>
+
+
+
 wobei für $|s(t)|\leqslant 1$ &nbsp; gilt: &nbsp; $K<s(t)$ 
 $$
   \omega(t)\mathrm{d}t=\mathrm{d} \varphi (t)  | \int
