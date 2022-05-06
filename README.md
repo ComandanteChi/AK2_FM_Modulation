@@ -52,7 +52,7 @@ $$
   \omega(t)=\frac{\mathrm{d} \varphi (t)}{\mathrm{d} t} = Ks(t)+\omega_{T}
 $$ --> 
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=%20%20%5Comega(t)%3D%5Cfrac%7B%5Cmathrm%7Bd%7D%20%5Cvarphi%20(t)%7D%7B%5Cmathrm%7Bd%7D%20t%7D%20%3D%20Ks(t)%2B%5Comega_%7BT%7D"></div>
+<div align="center"><img style="background: white;" src="svg/PXpO0YE1VR.svg"></div>
 
 
 
