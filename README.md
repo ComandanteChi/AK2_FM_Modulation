@@ -26,8 +26,11 @@ Butterworth Filter Entwurf. Der Basissignal muss von Frequnzen, die für das men
 Wie wir schon wissen die Formel für die Frequenzmodulation lautet:
 
 
-![equation](http://www.sciweavers.org/tex2img.php?eq=1%2Bsin%28mc%5E2%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
 
+
+<p align="center">
+<img src="https://latex.codecogs.com/png.image?\dpi{110}u_{FM}(t)=sin(\varphi&space;(t)))">
+</p>
 
 <p align="center">
 <img src="https://render.githubusercontent.com/render/math?math=u_{FM}(t)=sin(\varphi (t))">
@@ -39,23 +42,20 @@ Daher berechnen wir die Phase $\varphi (t)$. Die Phase ergibt sich aus folgenden
 <img src="https://render.githubusercontent.com/render/math?math=\varphi (t) = \omega_{0}t + \varphi_{0}">
 </p>
 
+<p align="center">
+<img src="https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/formulas/CodeCogsEqn2.png">
+</p>
+
+
 $$
     \varphi (t) = \omega_{0} t + \varphi_{0}
 $$
  
+
+
 $$
   \omega(t)=\frac{\mathrm{d} \varphi (t)}{\mathrm{d} t} = Ks(t)+\omega_{T}
 $$
-
-
-<!-- $$
-  \omega(t)=\frac{\mathrm{d} \varphi (t)}{\mathrm{d} t} = Ks(t)+\omega_{T}
-$$ --> 
-
-<div align="center"><img style="background: white;" src="svg/PXpO0YE1VR.svg"></div>
-
-
-
 wobei für $|s(t)|\leqslant 1$ &nbsp; gilt: &nbsp; $K<s(t)$ 
 $$
   \omega(t)\mathrm{d}t=\mathrm{d} \varphi (t)  | \int
