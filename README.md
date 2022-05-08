@@ -18,11 +18,11 @@ FM is eine Form der Modulation, bei der die Frequenzänderungen am Trägersignal
 ### FM-Modulation
 
 **Lösungskonzept FM Modulation:**<br />
-Es wird als erstens ein Audiosignal s(t) in Matlab mittels das Befehlskommando „audioread()“ eingelesen. 
+Es wird als erstens ein Audiosignal s(t) in Matlab mittels das Befehlskommando _audioread()_ eingelesen. 
 
 <pre><code>[v_in, fs] = audioread('./AK2_FM_Modulation/audio/mozart.wav');</code></pre>
 
-Dies wird in seiner Bandbreite auf einen geeigneten Frequenz  (Grundfrequenz des frequenzmoduliertenTrägersignals mit Fg = 8 KHz) eingeschränkt. Zu diesem Zweck wurde eine Filterung des Audiosignals mit dem Butterworth Filter (sperrgrenze bei 8 kHz) vorgenommen, dessen Bode Diagramm im Folgenden dargestellt wurde.
+Dies wird in seiner Bandbreite auf einen geeigneten Frequenz  (Grundfrequenz des frequenzmoduliertenTrägersignals mit _Fg = 8 KHz_) eingeschränkt. Zu diesem Zweck wurde eine Filterung des Audiosignals mit dem Butterworth Filter (sperrgrenze bei 8 kHz) vorgenommen, dessen Bode Diagramm im Folgenden dargestellt wurde.
 
 <br /> ![Butterworth Filter](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/img/butter_filter.jpg?raw=true "Butterworth Filter")
 <pre><code>[N,Wn] = buttord(2*fpass/fs, 2*fstop/fs,apass,astop);<br />[B,A] = butter(N,Wn);</code></pre><br />
