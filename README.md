@@ -1,23 +1,24 @@
 # FM-Modulation/Demodulation
-
-Das Ziel der Übung ist ein Musikstück auf ein Sinussignal modulieren und dann dieses Signal demodulieren (zurückgewinnen).
+### Aufgabenstellung
+Ziel dieser Übung ist ein bandbegrenztes Audiosignal in Matlab zu erzeugen und dies auf einem frequenzmodulierten Trägersignal umzuformen und in wave-Form abzuspeichern. Als nächstes wird in einem zweiten Skript in Matlab das bereits modulierten Signal eingelesen und dabei eine Frequenzdemodulation vorgenommen, um dadurch den ursprünglichen Audiosignal aus dem bereits modulierten Trägersignal zurückgewinnen zu können.
 
 ### Theorie:
-FM is eine Form der Modulation dei der, die Frequenzänderungen am Trägersignal entsprechen der Änderungen am Basisbandsignal. Die Amplitude des Signals bleibt dabei konstant. FM ist eine analoge Form der Signalübertragung.
+FM is eine Form der Modulation, bei der die Frequenzänderungen am Trägersignal die Änderung der Information am Basisbandsignal entspricht. Die Amplitude des Signals bleibt dabei konstant. FM ist eine analoge Form der Signalübertragung.
 
 ![FM-Modulation](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/img/frequencymodulation.png?raw=true "FM-Modulation")
 <br /> Wie der Name schon sagt ist FM in Radioübertragung andewendet. Die andere Anwendungsbereiche sind: Radaren, seismische Erkundung, Telemetrie, Magnetbandaufzeichnung u.s.w.
 
-### Rahmenbedinungen:
+### Vorgehensweise:
 
 - Es gibt insgesamt zwei Matlab-Skripten: ein Skript für Modulation und einen Zweiten um das Signal zurückgewinnen.
 - [FM-Modulation.m](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/FM-Modulation.m/) führt die FM-Modulation aus und deswegen muss er zuerst ausgefüht sein. Der Signal wird in Audiodatei ([mozart_fm.wav](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/audio/mozart_fm.wav/)) abgespeichert.
 - [FM-Demodulation.m](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/FM-Demodulation.m/) demoduliert diesen Signal bzw. gewinnt ihn wieder und speichert ihn als [mozart_orig.wav](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/audio/mozart_orig.wav/) Datei ab.
 
-### **FM-Modulation**
+### **Durchführung:**
+### 1) FM-Modulation
 
 **STEP 1**<br />
-Denn wir in MATLAB nur mit diskrete Signale arbeiten können muss unsere Audiodatei zuerst abgetastet werden.
+Als erstens wird ein Audiosignal in Matlab eingelesen. Dies wird in seiner Bandbreite auf das Grundfrequenz des Trägersignals mit 8 kHz Frequenz. 
 
 <pre><code>[v_in, fs] = audioread('./AK2_FM_Modulation/audio/mozart.wav');</code></pre>
 
