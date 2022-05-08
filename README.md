@@ -87,7 +87,8 @@ Dadurch wird die Amplitudeninformation des ursprünglichen Audiosignals in Frequ
 In Matlab lässt sich dieses Vorhabens folgendermaßen realisieren: 
 
 <pre><code>phi(1) = K*v_out(1)*Ts + wt*Ts;
-phi(1) = mod(phi(1),2*pi);<br />for i=2:1:N   
+phi(1) = mod(phi(1),2*pi);
+for i=2:1:N   
     phi(i) = phi(i-1) + K*v_out(i)*Ts + wt*Ts;
     phi(i) = mod(phi(i),2*pi);    
 end</code></pre><br />
