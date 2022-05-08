@@ -1,3 +1,21 @@
+<!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    !   Um das Inhalt von Markdown-File anzusehen klicken Sie folfenden Link an.  !
+    !   Link zum Projekt: https://github.com/ComandanteChi/AK2_FM_Modulation      !
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! !
+    ------------------------------------------------------------------------
+    % @file           : README.md
+    % @brief          : Dokumentation
+    ------------------------------------------------------------------------
+    ------------------------------------------------------------------------
+	PROJEKTNAME - FM-Moodulation & Demodulation
+
+	PROJEKTTEAM - Juri, Milad, Alexei
+
+	DATUM -     Beginn 29.03.2022
+             Abschluss 08.05.2022
+    ------------------------------------------------------------------------
+-->
+
 # FM-Modulation/Demodulation
 ### Aufgabenstellung
 Ziel dieser Übung ist ein bandbegrenztes Audiosignal in Matlab zu erzeugen und dies auf einem frequenzmodulierten Trägersignal umzuformen und in wave-Form abzuspeichern. Als nächstes wird in einem zweiten Skript in Matlab das bereits modulierten Signal eingelesen und dabei eine Frequenzdemodulation vorgenommen, um dadurch den ursprünglichen Audiosignal aus dem bereits modulierten Trägersignal zurückgewinnen zu können.
