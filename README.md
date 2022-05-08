@@ -22,13 +22,10 @@ Es wird als erstens ein Audiosignal s(t) in Matlab mittels das Befehlskommando _
 
 <pre><code>[v_in, fs] = audioread('./AK2_FM_Modulation/audio/mozart.wav');</code></pre>
 
-Dies wird in seiner Bandbreite auf einen geeigneten Frequenz  (Grundfrequenz des frequenzmoduliertenTrägersignals mit _Fg = 8 KHz_) eingeschränkt. Zu diesem Zweck wurde eine Filterung des Audiosignals mit dem Butterworth Filter (sperrgrenze bei 8 kHz) vorgenommen, dessen Bode Diagramm im Folgenden dargestellt wurde.
+Dies wird in seiner Bandbreite auf einen geeigneten Frequenz  (Grundfrequenz des frequenzmoduliertenTrägersignals mit _Fg = 8 KHz_) eingeschränkt. Zu diesem Zweck wurde eine Filterung des Audiosignals mit dem Butterworth Filter (Sperrgrenze bei 8 kHz) vorgenommen, dessen Bode Diagramm im Folgenden dargestellt wurde.
 
 <br /> ![Butterworth Filter](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/img/butter_filter.jpg?raw=true "Butterworth Filter")
 <pre><code>[N,Wn] = buttord(2*fpass/fs, 2*fstop/fs,apass,astop);<br />[B,A] = butter(N,Wn);</code></pre><br />
-
-Im nächsten Schritt geht es um die Erzeugung eines frequenzmodulierten Trägersignals. 
-Dies erfolgt folgendermaßen:
 
 
 Wie wir schon wissen die Formel für die Frequenzmodulation lautet:
@@ -45,7 +42,7 @@ Daher berechnen wir die Phase
 <img src="https://latex.codecogs.com/png.image?\dpi{110}\varphi&space;(t)&space;=&space;\omega_{0}&space;t&space;&plus;&space;\varphi_{0}&space;">
 </p>
 
-In dieser Formel ist ersichtlich, dass sich die Phase des Trägersignal in Abhängigkeit des ursprünglich erzeugten Audiosignals linear verändert. Zur Erzeugung eines frequenzmodulierten Trägersignals wird diese Phasenänderung über die Dauer des Audiosignals berechnet und daraus den Sinus bestimmt.
+Im nächsten Schritt geht es um die Erzeugung eines frequenzmodulierten Trägersignals. Dies erfolgt folgendermaßen:
 
 <p align="center">
 <img src="https://latex.codecogs.com/png.image?\dpi{110}\omega(t)=\frac{\mathrm{d}&space;\varphi&space;(t)}{\mathrm{d}&space;t}&space;=&space;Ks(t)&plus;\omega_{T}">
@@ -62,20 +59,19 @@ gilt: &nbsp;
 <img src="https://latex.codecogs.com/png.image?\dpi{110}\omega(t)\mathrm{d}t=\mathrm{d}&space;\varphi&space;(t)&space;&space;|&space;\int">
 </p>
 
-
-Dadurch wird die Amplitudeninformation des ursprünglichen Audiosignals in Frequenz-Variation des Trägersignals umgewandelt.
+In dieser Formel ist ersichtlich, dass sich die Phase des Trägersignal in Abhängigkeit des ursprünglich erzeugten Audiosignals linear verändert. Zur Erzeugung eines frequenzmodulierten Trägersignals wird diese Phasenänderung über die Dauer des Audiosignals berechnet und daraus den Sinus bestimmt.
 
 <p align="center">
 <img src="https://latex.codecogs.com/png.image?\dpi{110}\varphi&space;(t)&space;=&space;\int_{-\infty}^{t}&space;\omega(\tau&space;){\mathrm{d}&space;\tau}&space;=&space;K\int_{-\infty}^{t}&space;s(\tau&space;){\mathrm{d}&space;\tau+\omega_{T}t}">
 </p>
 
+Dadurch wird die Amplitudeninformation des ursprünglichen Audiosignals in Frequenz-Variation des Trägersignals umgewandelt.
 In Matlab lässt sich dieses Vorhabens folgendermaßen realisieren: 
 
 <pre><code>phi(1) = K*v_out(1)*Ts + wt*Ts;<br />phi(1) = mod(phi(1),2*pi);<br />for i=2:1:N   
     phi(i) = phi(i-1) + K*v_out(i)*Ts + wt*Ts;
     phi(i) = mod(phi(i),2*pi);    
 end</code></pre><br />
-
 
 Am Schluss modulieren wir das Signal, das gesendet werden muss, auf Trägersignal und speichern ihn als [mozart_fm.wav](https://github.com/ComandanteChi/AK2_FM_Modulation/blob/main/mozart_fm.wav/) Datei ab.
 <pre><code>v_fm = sin(phi)
