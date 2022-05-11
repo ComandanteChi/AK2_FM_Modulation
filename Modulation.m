@@ -29,7 +29,7 @@ clc
 % Liest das Audiosignal und kehrt abgetastete Werte und Abtastrate zurück.
 %!ACHTUNG! Geben Sie in "audioread" einen genauen Standort von ihrer
 %Audiodatei!
-[v_stereo, fs] = audioread('/home/chi/Desktop/Programs/Matlab/Juri/AK2_FM_Modulation/mozart.mp3');
+[v_stereo, fs] = audioread('/home/chi/Demo/AK2_FM_Modulation/audio/mozart.mp3');
 % Die abgetastete Werte sind dem Vektor v_in zugewiesen
 v_in = v_stereo(:,1);
 
@@ -63,7 +63,7 @@ v_out = filter(B,A,v_in);
 v_out_max = max(abs(v_out));
 v_out = v_out./v_out_max;
 % Abspeichern des (gefilterten&normalisierten) Signals in einer .wav-Datei.
-audiowrite('mozart_edit.wav',v_out,fs);
+audiowrite('/home/chi/Demo/AK2_FM_Modulation/audio/mozart_edit.wav',v_out,fs);
 
 %% Phase Berechnung
 wt = 2*pi*8e3;  % Kreisfrequenz des Trägersignals
@@ -86,7 +86,7 @@ v_fm = sin(phi);
 figure(2);
 plot(1:1:N,v_out,1:1:N,v_fm);
 % Das FM-Signal im .wav-File abspeichern
-audiowrite('mozart_fm.wav',v_fm,fs);
+audiowrite('/home/chi/Demo/AK2_FM_Modulation/audio/mozart_fm.wav',v_fm,fs);
 
 
 

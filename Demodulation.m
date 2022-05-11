@@ -32,7 +32,7 @@ clc
 % Liest das Audiosignal und kehrt abgetastete Werte und Abtastrate zurück.
 %!ACHTUNG! Geben Sie in "audioread" einen genauen Standort von ihrer
 %Audiodatei!
-[v_in, fs] = audioread('/home/chi/Desktop/Programs/Matlab/Juri/AK2_FM_Modulation/mozart_fm.wav');
+[v_in, fs] = audioread('/home/chi/Demo/AK2_FM_Modulation/audio/mozart_fm.wav');
 Ts = 1/fs;  % Abtastperiode
 %% Übergang von FM zu AM
 v_diff = diff(v_in);
@@ -62,7 +62,7 @@ N = length(uspec);      % bestimme Anzahl von Elementen in Spektrumvektor = Anza
 
 umagspec = abs(uspec);               % bestimme Betragsspektrum
 
-umagspec = 2/N*umagspec(1:N/2);     % bestimme einseitiges (d.h., nur positive Frequenzen) Betragsspektrum
+ umagspec = 2/N*umagspec(1:N/2);     % bestimme einseitiges (d.h., nur positive Frequenzen) Betragsspektrum
                                           % und skaliere (Faktor 2/N) auf physikalische Amplitudenwerte
 
 umagspec(1) = umagspec(1)/2;        % korrigiere Gleichanteil
@@ -96,7 +96,7 @@ v_out = v_out - mean(v_out);
 v_out_max = max(abs(v_out));
 v_out = v_out./v_out_max;
 % Zurückgewonnenes Signal abspeichern
-audiowrite('mozart_orig.wav',v_out,fs);
+audiowrite('/home/chi/Demo/AK2_FM_Modulation/audio/mozart_orig.wav',v_out,fs);
 
 %% Spektrum berechnen (danach)
 uspec = fft(v_out);         % berechne Fast Fourier Transform (= digitale Form der Fourier-Transformation) von Signal u
